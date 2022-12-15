@@ -21,7 +21,7 @@ void UserInput::update()
 	{
 		if (sdl_event.type == SDL_QUIT)
 		{
-			sendEvent();
+			sendEvent(CLOSE_GAME);
 		}
 	}
 }

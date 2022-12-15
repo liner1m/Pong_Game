@@ -161,6 +161,7 @@
     <ClInclude Include="EventSender.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GraphicRender.h" />
+    <ClInclude Include="EnumRecipientUserInputEvent.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="RecipientUserInputEvent.h" />
     <ClInclude Include="SenderUserInputEvent.h" />

@@ -3,6 +3,7 @@
 #define _SENDERUSERINPUTEVENT_H_
 
 #include "EventSender.h"
+#include "EnumRecipientUserInputEvent.h"
 
 class SenderUserInputEvent : public EventSender
 {

@@ -13,7 +13,7 @@ private:
 	vector<EventRecipient*> vecRecipients;
 
 public:
-	void sendEvent();
+	void sendEvent(int eventEnum);
 
 	void addRecipient(EventRecipient& recipient);
 	void removeRecipient(EventRecipient& recipient);

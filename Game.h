@@ -21,7 +21,7 @@ public:
 	Game();
 	~Game();
 
-	void notify() override;
+	void notify(int eventEnum) override;
 };
 
 #endif

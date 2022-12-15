@@ -3,10 +3,11 @@
 #define _RECIPIENTUSERINPUTEVENT_H_
 
 #include "EventRecipient.h"
+#include "EnumRecipientUserInputEvent.h"
 
 class RecipientUserInputEvent : public EventRecipient
 {
-	void notify() override;
+
 };
 
 #endif

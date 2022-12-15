@@ -2,11 +2,11 @@
 #include "EventSender.h"
 #include <algorithm>
 
-void EventSender::sendEvent()
+void EventSender::sendEvent(int eventEnum)
 {
-	std::for_each(vecRecipients.begin(), vecRecipients.end(), [](EventRecipient* recipient)
+	std::for_each(vecRecipients.begin(), vecRecipients.end(), [&](EventRecipient* recipient)
 		{
-			recipient->notify();
+			recipient->notify(eventEnum);
 		});
 }
 

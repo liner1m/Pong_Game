@@ -9,7 +9,7 @@ class EventRecipient
 private:
 
 public:
-	virtual void notify();
+	virtual void notify(int eventEnum);
 };
 
 #endif

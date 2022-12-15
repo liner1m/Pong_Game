@@ -43,7 +43,14 @@ Game::~Game()
 
 }
 
-void Game::notify()
+void Game::notify(int eventEnum)
 {
-	isGameStart = false;
+	switch (eventEnum)
+	{
+	case CLOSE_GAME:
+		isGameStart = false;
+		break;
+	default:
+		break;
+	}
 }
