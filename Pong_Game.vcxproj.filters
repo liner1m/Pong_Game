@@ -39,12 +39,6 @@
     <ClCompile Include="EventRecipient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SenderUserInputEvent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RecipientUserInputEvent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

@@ -150,8 +150,6 @@
     <ClCompile Include="GraphicRender.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Pong_Game.cpp" />
-    <ClCompile Include="RecipientUserInputEvent.cpp" />
-    <ClCompile Include="SenderUserInputEvent.cpp" />
     <ClCompile Include="UserInput.cpp" />
     <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
