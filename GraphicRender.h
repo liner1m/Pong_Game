@@ -30,7 +30,7 @@ public:
 
 	~GraphicRender();
 
-	void drawObjects(const vector<Object>& vecObjects);
+	void drawObjects(const vector<Object*>& vecObjects);
 	void drawScore();
 
 

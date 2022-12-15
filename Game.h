@@ -6,9 +6,19 @@
 #include "GraphicRender.h"
 #include "UserInput.h"
 
+// For TICKS_PER_SECOND
+#include <chrono>
+#include <thread>
+
+using namespace std::this_thread;
+using namespace std::chrono;
+
 class Game : public RecipientUserInputEvent
 {
 private:
+	const unsigned TICKS_PER_SECOND;
+	const nanoseconds delay = nanoseconds(1000000000 / TICKS_PER_SECOND);
+
 	bool isGameStart;
 
 	GraphicRender graphicRender{ 1000, 1000 };
@@ -19,6 +29,7 @@ private:
 
 public:
 	Game();
+	Game(unsigned ticksPerSecond);
 	~Game();
 
 	void notify(int eventEnum) override;

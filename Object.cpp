@@ -15,13 +15,13 @@ Vector2D Object::setSize(const Vector2D& size)
 
 Vector2D Object::addSize(const Vector2D& size)
 {
-    this->size + size;
+    this->size = this->size + size;
     return this->size;
 }
 
 Vector2D Object::subtractSize(const Vector2D& size)
 {
-	this->size - size;
+    this->size = this->size - size;
 	return this->size;
 }
 
@@ -40,12 +40,12 @@ Vector2D Object::setPosition(const Vector2D& position)
 
 Vector2D Object::addPosition(const Vector2D& position)
 {
-    this->position + position;
+    this->position = this->position + position;
     return this->position;
 }
 
 Vector2D Object::subtractPosition(const Vector2D& position)
 {
-    this->position - position;
+    this->position = this->position - position;
     return this->position;
 }

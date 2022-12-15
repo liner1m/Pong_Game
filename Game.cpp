@@ -22,18 +22,29 @@ void Game::gameLoop()
 	obj2.setSize({ 100, 100 });
 	obj2.setPosition({ 700, 600 });
 
-	vector<Object> vecObjects = { obj1, obj2 };
+	vector<Object*> vecObjects = { &obj1, &obj2 };
 
 	// Game Loop
 	while (isGameStart)
 	{
+
+		obj1.addPosition({ 1, 0 });
+
 		userInput.update();
 		graphicRender.drawObjects(vecObjects);
+
+		// Set Delay For Game Loop
+		sleep_for(delay);
 	}
 }
 
 
-Game::Game()
+Game::Game() : TICKS_PER_SECOND{ 60 }
+{
+	gameInit();
+}
+
+Game::Game(unsigned ticksPerSecond) : TICKS_PER_SECOND{ ticksPerSecond }
 {
 	gameInit();
 }

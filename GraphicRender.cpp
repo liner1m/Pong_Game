@@ -49,18 +49,18 @@ GraphicRender::~GraphicRender()
 	destoySDL2();
 }
 
-void GraphicRender::drawObjects(const vector<Object>& vecObjects)
+void GraphicRender::drawObjects(const vector<Object*>& vecObjects)
 {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
 
 	// Render objects from vector vecObjects
-	std::for_each(vecObjects.begin(), vecObjects.end(), [&](Object object)
+	std::for_each(vecObjects.begin(), vecObjects.end(), [&](Object* const object)
 		{
 			SDL_Rect rect;
-			rect.x = object.getPosition().x;
-			rect.y = object.getPosition().y;
-			rect.w = object.getSize().x;
-			rect.h = object.getSize().y;
+			rect.x = object->getPosition().x;
+			rect.y = object->getPosition().y;
+			rect.w = object->getSize().x;
+			rect.h = object->getSize().y;
 
 			SDL_RenderFillRect(renderer, &rect);
 		});
