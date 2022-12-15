@@ -4,7 +4,6 @@
 
 // SDL2
 #include <SDL.h>
-#include <stdio.h>
 //
 
 #include "Object.h"
@@ -18,18 +17,23 @@ private:
 	const int SCREEN_WIDTH;
 	const int SCREEN_HEIGHT;
 
-	
+
 	SDL_Window* window = NULL;
-	SDL_Surface* screenSurface = NULL;
+	SDL_Renderer* renderer = NULL;
 
 	void initSDL2();
+	void destoySDL2();
 
 public:
 	GraphicRender();
-
 	GraphicRender(int screenWidth, int screenHeight);
 
-	void drawObjects(vector<Object>& vecObjects);
+	~GraphicRender();
+
+	void drawObjects(const vector<Object>& vecObjects);
+	void drawScore();
+
+
 };
 
 #endif

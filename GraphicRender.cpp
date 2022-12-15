@@ -1,51 +1,34 @@
-#include "GraphicRender.h"
 
+#include "GraphicRender.h"
+#include <algorithm>
+
+
+#define _DEBUG_
+#ifdef _DEBUG_
+
+#include <iostream>
+
+#endif
 
 void GraphicRender::initSDL2()
 {
 	
-
 	//Initialize SDL
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
+	if (SDL_Init(SDL_INIT_EVERYTHING) == 0)
 	{
-		printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
-	}
-	else
-	{
-		//Create window
 		window = SDL_CreateWindow("Pong_Game", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-		if (window == NULL)
-		{
-			printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
-		}
-		else
-		{
-			//Get window surface
-			screenSurface = SDL_GetWindowSurface(window);
-
-			//Fill the surface white
-			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
-
-			//Update the surface
-			SDL_UpdateWindowSurface(window);
-
-			//Hack to get window to stay up
-			SDL_Event e;
-			bool quit = false;
-			while (quit == false)
-			{ 
-				while (SDL_PollEvent(&e))
-				{ 
-					if (e.type == SDL_QUIT) quit = true;
-				}
-			}
-		}
+		//screenSurface = SDL_GetWindowSurface(window);
+		renderer = SDL_CreateRenderer(window, -1, 0);
 	}
 
-	//Destroy window
-	SDL_DestroyWindow(window);
+	
+}
 
-	//Quit SDL subsystems
+
+void GraphicRender::destoySDL2()
+{
+	SDL_DestroyWindow(window);
+	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
 }
 
@@ -61,7 +44,29 @@ GraphicRender::GraphicRender(int screenWidth, int screenHeight)
 	initSDL2();
 }
 
-void GraphicRender::drawObjects(vector<Object>& vecObjects)
+GraphicRender::~GraphicRender()
 {
+	destoySDL2();
+}
 
+void GraphicRender::drawObjects(const vector<Object>& vecObjects)
+{
+	SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+
+	// Render objects from vector vecObjects
+	std::for_each(vecObjects.begin(), vecObjects.end(), [&](Object object)
+		{
+			SDL_Rect rect;
+			rect.x = object.getPosition().x;
+			rect.y = object.getPosition().y;
+			rect.w = object.getSize().x;
+			rect.h = object.getSize().y;
+
+			SDL_RenderFillRect(renderer, &rect);
+		});
+
+	
+	SDL_RenderPresent(renderer);
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+	SDL_RenderClear(renderer);
 }
