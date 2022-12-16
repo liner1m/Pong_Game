@@ -22,6 +22,8 @@ private:
 	SDL_Window* window = NULL;
 	SDL_Renderer* renderer = NULL;
 
+	vector<Object*>* vecObjects;
+
 	void initSDL2();
 	void destoySDL2();
 
@@ -29,12 +31,12 @@ private:
 
 	void eventTick();
 
-	void drawObjects(const vector<Object*>& vecObjects);
+	void drawObjects(const vector<Object*>* vecObjects);
 	void drawScore();
 
 public:
 	GraphicRender();
-	GraphicRender(int screenWidth, int screenHeight);
+	GraphicRender(int screenWidth, int screenHeight, vector<Object*>* vecObjects);
 
 	~GraphicRender();
 };

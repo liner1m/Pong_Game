@@ -28,5 +28,4 @@ void EventSender::removeRecipient(EventRecipient& recipient)
 	{
 		vecRecipients.erase(iterFoundRecipient);
 	}
-
 }

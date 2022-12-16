@@ -2,16 +2,6 @@
 #include "GraphicRender.h"
 #include <algorithm>
 
-
-#define _DEBUG_
-#ifdef _DEBUG_
-
-#include <iostream>
-#include "PlayerRacket.h"
-#include "Ball.h"
-
-#endif
-
 void GraphicRender::initSDL2()
 {
 	
@@ -42,28 +32,16 @@ void GraphicRender::notifyGameTickEvent(int eventEnum)
 
 void GraphicRender::eventTick()
 {
-	//Test
-
-	PlayerRacket playerRacket;
-	Ball ball;
-	ball.setSpeed(Vector2D{ 1, 0 });
-	ball.setLocation(Vector2D{ 100,200 });
-	ball.setLocalBorders(Borders{ 100,100,100,100 });
-
-	vector<Object*> vecObjects = { &ball };
-
-	///
-
 	drawObjects(vecObjects);
 }
 
-GraphicRender::GraphicRender() : SCREEN_WIDTH{ 1280 }, SCREEN_HEIGHT{ 720 }
+GraphicRender::GraphicRender() : SCREEN_WIDTH{ 1280 }, SCREEN_HEIGHT{ 720 }, vecObjects{ nullptr }
 {
 	initSDL2();
 }
 
-GraphicRender::GraphicRender(int screenWidth, int screenHeight)
-	: SCREEN_WIDTH{ screenWidth }, SCREEN_HEIGHT{ screenHeight }
+GraphicRender::GraphicRender(int screenWidth, int screenHeight, vector<Object*>* vecObjects)
+	: SCREEN_WIDTH{ screenWidth }, SCREEN_HEIGHT{ screenHeight }, vecObjects{ vecObjects }
 {
 	initSDL2();
 }
@@ -73,12 +51,12 @@ GraphicRender::~GraphicRender()
 	destoySDL2();
 }
 
-void GraphicRender::drawObjects(const vector<Object*>& vecObjects)
+void GraphicRender::drawObjects(const vector<Object*>* vecObjects)
 {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
 
 	// Render objects from vector vecObjects
-	std::for_each(vecObjects.begin(), vecObjects.end(), [&](Object* const object)
+	std::for_each(vecObjects->begin(), vecObjects->end(), [&](Object* const object)
 		{
 			SDL_Rect tempRect;
 			tempRect.x = object->getGlobalBorders().left;

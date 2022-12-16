@@ -67,6 +67,12 @@
     <Filter Include="Game\Source\Objects">
       <UniqueIdentifier>{e7f36a64-5420-46c7-ad59-bfdf46319af6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Source\Controllers">
+      <UniqueIdentifier>{c3c94db0-bb26-4b2b-8c4a-7d5f0a7e0816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Includes\Controllers">
+      <UniqueIdentifier>{088baa0f-0c1f-47a8-80f0-b1d9d9c7170c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pong_Game.cpp">
@@ -113,6 +119,18 @@
     </ClCompile>
     <ClCompile Include="SenderGameTickEvent.cpp">
       <Filter>Engine\Source\Observer</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Engine\Source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>Engine\Source\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerController.cpp">
+      <Filter>Engine\Source\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Pawn.cpp">
+      <Filter>Engine\Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +181,18 @@
     </ClInclude>
     <ClInclude Include="PlayerRacket.h">
       <Filter>Game\Includes\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Engine\Includes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>Engine\Includes\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>Engine\Includes\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pawn.h">
+      <Filter>Engine\Includes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,9 +2,9 @@
 #ifndef _PLAYERRACKET_H_
 #define _PLAYERRACKET_H_
 
-#include "StaticObject.h"
+#include "Pawn.h"
 
-class PlayerRacket : public StaticObject
+class PlayerRacket : public Pawn
 {
 
 };

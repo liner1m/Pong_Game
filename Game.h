@@ -6,6 +6,7 @@
 #include "SenderGameTickEvent.h"
 #include "GraphicRender.h"
 #include "UserInput.h"
+#include "Map.h"
 
 // For TICKS_PER_SECOND
 #include <chrono>
@@ -22,7 +23,8 @@ private:
 
 	bool isGameStart;
 
-	GraphicRender graphicRender{ 1000, 1000 };
+	Map map;
+	GraphicRender graphicRender{ 1000, 1000, &map.getVecObjects()};
 	UserInput userInput;
 
 	void gameInit();

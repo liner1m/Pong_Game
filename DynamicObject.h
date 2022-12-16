@@ -6,9 +6,10 @@
 
 class DynamicObject : public Object
 {
-private:
+protected:
 	Vector2D speed;
 
+private:
 	void eventTick() override;
 
 	void moveBySpeed();

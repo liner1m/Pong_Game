@@ -1,5 +1,6 @@
 
 #include "Game.h"
+#include "Pawn.h"
 
 void Game::gameInit()
 {
@@ -9,8 +10,25 @@ void Game::gameInit()
 	userInput.addRecipient(*this);
 	addRecipient(graphicRender);
 	addRecipient(userInput);
+	addRecipient(map);
 
-	// 
+	// Add objects
+	Pawn test;
+	test.setLocation(Vector2D{ 100, 300 });
+	test.setLocalBorders(Borders{ 100,100,100,100 });
+	test.setSpeed(Vector2D{ 1,0 });
+	//addRecipient(test);
+	map.addObject(test);
+
+	Pawn test2;
+	test2.setLocation(Vector2D{ 100, 300 });
+	test2.setLocalBorders(Borders{ 100,100,100,100 });
+	//addRecipient(test2);
+	map.addObject(test2);
+
+
+
+	//
 	gameLoop();
 }
 

@@ -2,8 +2,6 @@
 #ifndef _EVENTRECIPIENT_H_
 #define _EVENTRECIPIENT_H_
 
-
-
 class EventRecipient
 {
 public:
