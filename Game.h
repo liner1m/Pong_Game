@@ -3,6 +3,7 @@
 #define _GAME_H_
 
 #include "RecipientUserInputEvent.h"
+#include "SenderGameTickEvent.h"
 #include "GraphicRender.h"
 #include "UserInput.h"
 
@@ -13,7 +14,7 @@
 using namespace std::this_thread;
 using namespace std::chrono;
 
-class Game : public RecipientUserInputEvent
+class Game : public RecipientUserInputEvent, public SenderGameTickEvent
 {
 private:
 	const unsigned TICKS_PER_SECOND;

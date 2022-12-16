@@ -3,39 +3,47 @@
 #define _OBJECT_H_
 
 #include "Vector2D.h"
+#include "RecipientGameTickEvent.h"
 
-class Object
+struct Borders
 {
-private:
-	Vector2D size;
-	Vector2D position;
+	double right;
+	double left;
+	double up;
+	double down;
+
+	Borders() {
+		right = 0;
+		left = 0;
+		up = 0;
+		down = 0;
+	}
+
+	Borders(double right, double left, double up, double down) : right{ right }, left{ left }, up{ up }, down{ down }
+	{
+
+	}
+};
+
+class Object : public RecipientGameTickEvent
+{
+protected:
+	Vector2D location;
+	Borders localBorders;
+
+	void notify(int eventEnum) override;
+	virtual void eventTick() = 0;
 
 public:
-	// Get Size
-	Vector2D getSize();
+	Object();
+	Object(Vector2D location, Borders localBorders);
+	virtual ~Object();
 
-	// Set Size
-	Vector2D setSize(const Vector2D& size);
+	virtual void collision(Object& object) = 0;
 
-	// Add to Size
-	Vector2D addSize(const Vector2D& size);
-
-	// Subtract from Size
-	Vector2D subtractSize(const Vector2D& size);
-
-
-
-	// Get Position
-	Vector2D getPosition();
-
-	// Set Position
-	Vector2D setPosition(const Vector2D& position);
-
-	// Add to Position
-	Vector2D addPosition(const Vector2D& position);
-
-	// Subtract from Size
-	Vector2D subtractPosition(const Vector2D& position);
+	Vector2D getLocation();
+	Borders getLocalBorders();
+	Borders getGlobalBorders();
 };
 
 #endif

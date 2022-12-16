@@ -1,2 +1,13 @@
-﻿  GraphicRender.cpp
+﻿  Ball.cpp
+  DynamicObject.cpp
+  EventSender.cpp
+  Game.cpp
+  GraphicRender.cpp
+  Object.cpp
+  PlayerRacket.cpp
+  Pong_Game.cpp
+  StaticObject.cpp
+  UserInput.cpp
+  Vector2D.cpp
+  Generating Code...
   Pong_Game.vcxproj -> F:\1_Project\Test_Exercises\TE_DiJust_Pong_Game\x64\Debug\Pong_Game.exe

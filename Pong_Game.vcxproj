@@ -143,25 +143,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Draw.cpp" />
-    <ClCompile Include="EventRecipient.cpp" />
+    <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="DynamicObject.cpp" />
     <ClCompile Include="EventSender.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GraphicRender.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="PlayerRacket.cpp" />
     <ClCompile Include="Pong_Game.cpp" />
+    <ClCompile Include="StaticObject.cpp" />
     <ClCompile Include="UserInput.cpp" />
     <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Draw.h" />
+    <ClInclude Include="Ball.h" />
+    <ClInclude Include="DynamicObject.h" />
     <ClInclude Include="EventRecipient.h" />
     <ClInclude Include="EventSender.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GraphicRender.h" />
     <ClInclude Include="EnumRecipientUserInputEvent.h" />
+    <ClInclude Include="PlayerRacket.h" />
+    <ClInclude Include="StaticObject.h" />
+    <ClInclude Include="RecipientGameTickEvent.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="RecipientUserInputEvent.h" />
+    <ClInclude Include="SenderGameTickEvent.h" />
     <ClInclude Include="SenderUserInputEvent.h" />
     <ClInclude Include="UserInput.h" />
     <ClInclude Include="Vector2D.h" />

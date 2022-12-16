@@ -1,51 +1,42 @@
 #include "Object.h"
 
-
-// Size
-Vector2D Object::getSize()
+void Object::notify(int eventEnum)
 {
-    return this->size;
+	eventTick();
 }
 
-Vector2D Object::setSize(const Vector2D& size)
+Object::Object() : location{ Vector2D {} }, localBorders{ Borders {} }
 {
-    this->size = size;
-    return this->size;
+
 }
 
-Vector2D Object::addSize(const Vector2D& size)
+Object::Object(Vector2D location, Borders localBorders) : location{ location }, localBorders{ localBorders }
 {
-    this->size = this->size + size;
-    return this->size;
+
 }
 
-Vector2D Object::subtractSize(const Vector2D& size)
+Object::~Object()
 {
-    this->size = this->size - size;
-	return this->size;
+
 }
 
-
-// Position
-Vector2D Object::getPosition()
+Vector2D Object::getLocation()
 {
-    return this->position;
+	return location;
 }
 
-Vector2D Object::setPosition(const Vector2D& position)
+Borders Object::getLocalBorders()
 {
-    this->position = position;
-    return this->position;
+	return localBorders;
 }
 
-Vector2D Object::addPosition(const Vector2D& position)
+Borders Object::getGlobalBorders()
 {
-    this->position = this->position + position;
-    return this->position;
-}
+	Borders temp;
+	temp.right = location.x + localBorders.right;
+	temp.left = location.x + localBorders.left;
+	temp.up = location.y + localBorders.up;
+	temp.down = location.y + localBorders.down;
 
-Vector2D Object::subtractPosition(const Vector2D& position)
-{
-    this->position = this->position - position;
-    return this->position;
+	return temp;
 }

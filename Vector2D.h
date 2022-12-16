@@ -4,11 +4,11 @@
 
 struct Vector2D
 {
-	int x;
-	int y;
+	double x;
+	double y;
 
 	Vector2D();
-	Vector2D(int x, int y);
+	Vector2D(double x, double y);
 
 	Vector2D zeroVector();
 

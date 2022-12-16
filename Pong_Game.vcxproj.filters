@@ -1,81 +1,156 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{977f0d0b-24f6-45f5-99f6-b2856bc808f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{0fbc94a6-c3ba-4a76-9cf6-d4f95a183fb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Includes">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Engine\Includes\Objects">
+      <UniqueIdentifier>{1095f89f-c808-479a-9c39-6d137afaf609}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Includes\Observer">
+      <UniqueIdentifier>{73faaac3-41a4-4206-8572-ef6b273cab72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Includes\Game">
+      <UniqueIdentifier>{1ce87f31-5ffb-43fd-8665-9bb453cc8fc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Includes\Render">
+      <UniqueIdentifier>{658528c4-ef98-4495-847e-8d2515f048b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Includes\UserInput">
+      <UniqueIdentifier>{5acb3751-6ba3-416c-a869-262c9297a08f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Includes\Structures">
+      <UniqueIdentifier>{6235f408-4100-41fb-82f1-8783bde9bf7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Engine\Source\Objects">
+      <UniqueIdentifier>{b5a936e8-3f81-48a7-9c1c-e3f2b1942188}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Source\Observer">
+      <UniqueIdentifier>{f27d452f-3b43-4a85-bfb2-f684d6aed374}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Source\Game">
+      <UniqueIdentifier>{c768055f-e4ef-4ae8-932a-1926d69f1fad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Source\Render">
+      <UniqueIdentifier>{81a26afe-4af1-49ec-9c76-187f36238be7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Source\UserInput">
+      <UniqueIdentifier>{c06ab42a-eb82-4853-9bce-a8fbe1cc0c0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Source\Structures">
+      <UniqueIdentifier>{a6d5bc03-a754-4fa4-9c5a-053b66da5949}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Source">
+      <UniqueIdentifier>{9213a743-c794-4cd3-a9c1-0fcefa93b99c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Includes">
+      <UniqueIdentifier>{9ea81b1f-6429-4b70-96c5-43aab4b7a6b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Includes\Objects">
+      <UniqueIdentifier>{ac6f49dd-ba4b-460c-ad4a-296ddd3245c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Source\Objects">
+      <UniqueIdentifier>{e7f36a64-5420-46c7-ad59-bfdf46319af6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pong_Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Draw.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Engine\Source</Filter>
     </ClCompile>
     <ClCompile Include="Object.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GraphicRender.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UserInput.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Engine\Source\Objects</Filter>
     </ClCompile>
     <ClCompile Include="EventSender.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EventRecipient.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Engine\Source\Observer</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Engine\Source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicRender.cpp">
+      <Filter>Engine\Source\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInput.cpp">
+      <Filter>Engine\Source\UserInput</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2D.cpp">
+      <Filter>Engine\Source\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticObject.cpp">
+      <Filter>Engine\Source\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicObject.cpp">
+      <Filter>Engine\Source\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>Game\Source\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerRacket.cpp">
+      <Filter>Game\Source\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Draw.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GraphicRender.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UserInput.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EventSender.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EventRecipient.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SenderUserInputEvent.h">
-      <Filter>Header Files</Filter>
+      <Filter>Engine\Includes\Objects</Filter>
     </ClInclude>
     <ClInclude Include="RecipientUserInputEvent.h">
-      <Filter>Header Files</Filter>
+      <Filter>Engine\Includes\Observer</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="SenderUserInputEvent.h">
+      <Filter>Engine\Includes\Observer</Filter>
     </ClInclude>
     <ClInclude Include="EnumRecipientUserInputEvent.h">
-      <Filter>Header Files</Filter>
+      <Filter>Engine\Includes\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="EventRecipient.h">
+      <Filter>Engine\Includes\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="EventSender.h">
+      <Filter>Engine\Includes\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Engine\Includes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicRender.h">
+      <Filter>Engine\Includes\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInput.h">
+      <Filter>Engine\Includes\UserInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>Engine\Includes\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="SenderGameTickEvent.h">
+      <Filter>Engine\Includes\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="RecipientGameTickEvent.h">
+      <Filter>Engine\Includes\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicObject.h">
+      <Filter>Engine\Includes\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticObject.h">
+      <Filter>Engine\Includes\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>Game\Includes\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerRacket.h">
+      <Filter>Game\Includes\Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

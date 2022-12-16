@@ -7,6 +7,8 @@
 #ifdef _DEBUG_
 
 #include <iostream>
+#include "PlayerRacket.h"
+#include "Ball.h"
 
 #endif
 
@@ -33,6 +35,21 @@ void GraphicRender::destoySDL2()
 }
 
 
+void GraphicRender::notify(int eventEnum)
+{
+
+	//Test
+
+	PlayerRacket playerRacket;
+	Ball ball;
+	
+	vector<Object*> vecObjects = { &playerRacket, &ball };
+
+	///
+
+	drawObjects(vecObjects);
+}
+
 GraphicRender::GraphicRender() : SCREEN_WIDTH{ 1280 }, SCREEN_HEIGHT{ 720 }
 {
 	initSDL2();
@@ -56,11 +73,11 @@ void GraphicRender::drawObjects(const vector<Object*>& vecObjects)
 	// Render objects from vector vecObjects
 	std::for_each(vecObjects.begin(), vecObjects.end(), [&](Object* const object)
 		{
-			SDL_Rect rect;
-			rect.x = object->getPosition().x;
+			SDL_Rect rect{100, 100 , 30, 70};
+			/*rect.x = object->getPosition().x;
 			rect.y = object->getPosition().y;
 			rect.w = object->getSize().x;
-			rect.h = object->getSize().y;
+			rect.h = object->getSize().y;*/
 
 			SDL_RenderFillRect(renderer, &rect);
 		});
