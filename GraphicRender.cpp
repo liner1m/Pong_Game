@@ -46,8 +46,11 @@ void GraphicRender::eventTick()
 
 	PlayerRacket playerRacket;
 	Ball ball;
+	ball.setSpeed(Vector2D{ 1, 0 });
+	ball.setLocation(Vector2D{ 100,200 });
+	ball.setLocalBorders(Borders{ 100,100,100,100 });
 
-	vector<Object*> vecObjects = { &playerRacket, &ball };
+	vector<Object*> vecObjects = { &ball };
 
 	///
 
@@ -77,13 +80,13 @@ void GraphicRender::drawObjects(const vector<Object*>& vecObjects)
 	// Render objects from vector vecObjects
 	std::for_each(vecObjects.begin(), vecObjects.end(), [&](Object* const object)
 		{
-			SDL_Rect rect{100, 100 , 30, 70};
-			/*rect.x = object->getPosition().x;
-			rect.y = object->getPosition().y;
-			rect.w = object->getSize().x;
-			rect.h = object->getSize().y;*/
+			SDL_Rect tempRect;
+			tempRect.x = object->getGlobalBorders().left;
+			tempRect.y = object->getGlobalBorders().up;
+			tempRect.w = 100; //// test
+			tempRect.h = 200; //// test
 
-			SDL_RenderFillRect(renderer, &rect);
+			SDL_RenderFillRect(renderer, &tempRect);
 		});
 
 	

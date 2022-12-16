@@ -11,12 +11,16 @@ private:
 
 	void eventTick() override;
 
-	virtual void moveBySpeed();
+	void moveBySpeed();
 
 public:
 	~DynamicObject() override {};
 
 	void collision(Object& object) override;
+
+	void setLocation(Vector2D location);
+	void setLocalBorders(Borders localBorders);
+	void setSpeed(Vector2D speed);
 };
 
 #endif

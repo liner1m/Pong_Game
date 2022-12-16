@@ -3,6 +3,8 @@
   EventSender.cpp
   Game.cpp
   GraphicRender.cpp
+F:\1_Project\Test_Exercises\TE_DiJust_Pong_Game\GraphicRender.cpp(84,43): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+F:\1_Project\Test_Exercises\TE_DiJust_Pong_Game\GraphicRender.cpp(85,43): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   Object.cpp
   PlayerRacket.cpp
   Pong_Game.cpp

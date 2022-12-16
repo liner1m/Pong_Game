@@ -14,3 +14,18 @@ void DynamicObject::collision(Object& object)
 {
 
 }
+
+void DynamicObject::setLocation(Vector2D location)
+{
+	this->location = location;
+}
+
+void DynamicObject::setLocalBorders(Borders localBorders)
+{
+	this->localBorders = localBorders;
+}
+
+void DynamicObject::setSpeed(Vector2D speed)
+{
+	this->speed = speed;
+}
