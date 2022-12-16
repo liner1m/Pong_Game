@@ -31,7 +31,7 @@ protected:
 	Vector2D location;
 	Borders localBorders;
 
-	void notify(int eventEnum) override;
+	void notifyGameTickEvent(int eventEnum) override;
 	virtual void eventTick() = 0;
 
 public:

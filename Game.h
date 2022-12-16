@@ -33,7 +33,7 @@ public:
 	Game(unsigned ticksPerSecond);
 	~Game();
 
-	void notify(int eventEnum) override;
+	void notifyUserInputEvent(int eventEnum) override;
 };
 
 #endif

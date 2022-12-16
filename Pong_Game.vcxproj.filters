@@ -102,6 +102,18 @@
     <ClCompile Include="PlayerRacket.cpp">
       <Filter>Game\Source\Objects</Filter>
     </ClCompile>
+    <ClCompile Include="RecipientUserInputEvent.cpp">
+      <Filter>Engine\Source\Observer</Filter>
+    </ClCompile>
+    <ClCompile Include="RecipientGameTickEvent.cpp">
+      <Filter>Engine\Source\Observer</Filter>
+    </ClCompile>
+    <ClCompile Include="SenderUserInputEvent.cpp">
+      <Filter>Engine\Source\Observer</Filter>
+    </ClCompile>
+    <ClCompile Include="SenderGameTickEvent.cpp">
+      <Filter>Engine\Source\Observer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object.h">

@@ -151,6 +151,10 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PlayerRacket.cpp" />
     <ClCompile Include="Pong_Game.cpp" />
+    <ClCompile Include="RecipientUserInputEvent.cpp" />
+    <ClCompile Include="RecipientGameTickEvent.cpp" />
+    <ClCompile Include="SenderUserInputEvent.cpp" />
+    <ClCompile Include="SenderGameTickEvent.cpp" />
     <ClCompile Include="StaticObject.cpp" />
     <ClCompile Include="UserInput.cpp" />
     <ClCompile Include="Vector2D.cpp" />

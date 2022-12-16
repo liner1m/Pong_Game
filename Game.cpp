@@ -4,10 +4,13 @@
 void Game::gameInit()
 {
 	isGameStart = true;
-	userInput.addRecipient(*this);
-	//this->addRecipient(graphicRender);
-	//userInput.addRecipient(graphicRender);
 
+	// Observer links
+	userInput.addRecipient(*this);
+	addRecipient(graphicRender);
+	addRecipient(userInput);
+
+	// 
 	gameLoop();
 }
 
@@ -17,10 +20,7 @@ void Game::gameLoop()
 	while (isGameStart)
 	{
 		// Notify recipients about Updated Tick
-		sendEvent(0);
-
-		userInput.update();
-		//graphicRender.drawObjects(vecObjects);
+		sendGameTickEvent(0);
 
 		// Set Delay For Game Loop
 		sleep_for(delay);
@@ -43,7 +43,7 @@ Game::~Game()
 
 }
 
-void Game::notify(int eventEnum)
+void Game::notifyUserInputEvent(int eventEnum)
 {
 	switch (eventEnum)
 	{

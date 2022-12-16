@@ -35,14 +35,18 @@ void GraphicRender::destoySDL2()
 }
 
 
-void GraphicRender::notify(int eventEnum)
+void GraphicRender::notifyGameTickEvent(int eventEnum)
 {
+	eventTick();
+}
 
+void GraphicRender::eventTick()
+{
 	//Test
 
 	PlayerRacket playerRacket;
 	Ball ball;
-	
+
 	vector<Object*> vecObjects = { &playerRacket, &ball };
 
 	///

@@ -6,7 +6,8 @@
 
 class SenderGameTickEvent : public EventSender
 {
-
+public:
+	void sendGameTickEvent(int eventEnum);
 };
 
 #endif

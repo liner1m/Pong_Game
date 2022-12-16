@@ -7,7 +7,8 @@
 
 class SenderUserInputEvent : public EventSender
 {
-
+public:
+	void sendUserInputEvent(int eventEnum);
 };
 
 #endif

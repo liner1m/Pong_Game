@@ -7,7 +7,11 @@
 
 class RecipientUserInputEvent : public EventRecipient
 {
+private:
+	void notify(int eventEnum) override;
 
+public:
+	virtual void notifyUserInputEvent(int eventEnum) = 0;
 };
 
 #endif

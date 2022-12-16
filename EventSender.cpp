@@ -21,12 +21,12 @@ void EventSender::addRecipient(EventRecipient& recipient)
 }
 
 void EventSender::removeRecipient(EventRecipient& recipient)
-{	
+{
 	auto iterFoundRecipient = std::find(vecRecipients.begin(), vecRecipients.end(), &recipient);
 
 	if (iterFoundRecipient != vecRecipients.end())
 	{
 		vecRecipients.erase(iterFoundRecipient);
 	}
-	
+
 }

@@ -6,6 +6,10 @@
   Object.cpp
   PlayerRacket.cpp
   Pong_Game.cpp
+  RecipientUserInputEvent.cpp
+  RecipientGameTickEvent.cpp
+  SenderUserInputEvent.cpp
+  SenderGameTickEvent.cpp
   StaticObject.cpp
   UserInput.cpp
   Vector2D.cpp

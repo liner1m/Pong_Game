@@ -1,6 +1,6 @@
 #include "Object.h"
 
-void Object::notify(int eventEnum)
+void Object::notifyGameTickEvent(int eventEnum)
 {
 	eventTick();
 }

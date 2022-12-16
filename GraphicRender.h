@@ -13,7 +13,7 @@
 
 using std::vector;
 
-class GraphicRender : RecipientGameTickEvent
+class GraphicRender : public RecipientGameTickEvent
 {
 private:
 	const int SCREEN_WIDTH;
@@ -25,7 +25,9 @@ private:
 	void initSDL2();
 	void destoySDL2();
 
-	void notify(int eventEnum) override;
+	void notifyGameTickEvent(int eventEnum) override;
+
+	void eventTick();
 
 	void drawObjects(const vector<Object*>& vecObjects);
 	void drawScore();

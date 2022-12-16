@@ -6,7 +6,11 @@
 
 class RecipientGameTickEvent : public EventRecipient
 {
+private:
+	void notify(int eventEnum) override;
 
+public:
+	virtual void notifyGameTickEvent(int eventEnum) = 0;
 };
 
 #endif

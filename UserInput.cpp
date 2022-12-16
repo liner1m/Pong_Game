@@ -5,6 +5,11 @@ void UserInput::init()
 	
 }
 
+void UserInput::notifyGameTickEvent(int eventEnum)
+{
+	eventTick();
+}
+
 UserInput::UserInput()
 {
 	init();
@@ -15,13 +20,13 @@ UserInput::~UserInput()
 
 }
 
-void UserInput::update()
+void UserInput::eventTick()
 {
 	while (SDL_PollEvent(&sdl_event))
 	{
 		if (sdl_event.type == SDL_QUIT)
 		{
-			sendEvent(CLOSE_GAME);
+			sendUserInputEvent(CLOSE_GAME);
 		}
 	}
 }
