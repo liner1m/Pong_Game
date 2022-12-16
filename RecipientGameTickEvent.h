@@ -4,7 +4,7 @@
 
 #include "EventRecipient.h"
 
-class RecipientGameTickEvent : public EventRecipient
+class RecipientGameTickEvent : public virtual EventRecipient
 {
 private:
 	void notify(int eventEnum) override;

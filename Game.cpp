@@ -7,7 +7,7 @@ void Game::gameInit()
 	isGameStart = true;
 
 	// Observer links
-	userInput.addRecipient(*this);
+	userInput.addUserInputRecipient(*this);
 	addRecipient(graphicRender);
 	addRecipient(userInput);
 	addRecipient(map);
@@ -16,14 +16,17 @@ void Game::gameInit()
 	Pawn test;
 	test.setLocation(Vector2D{ 100, 300 });
 	test.setLocalBorders(Borders{ 100,100,100,100 });
-	test.setSpeed(Vector2D{ 1,0 });
-	//addRecipient(test);
+	//test.setSpeed(Vector2D{ 1,0 });
+	addRecipient(test);
+	test.setControllerSpeed(10);
+	userInput.addUserInputRecipient(test);
 	map.addObject(test);
 
 	Pawn test2;
 	test2.setLocation(Vector2D{ 100, 300 });
 	test2.setLocalBorders(Borders{ 100,100,100,100 });
-	//addRecipient(test2);
+	addRecipient(test2);
+	userInput.addUserInputRecipient(test2);
 	map.addObject(test2);
 
 

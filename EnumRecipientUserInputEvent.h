@@ -4,9 +4,12 @@
 
 enum EnumInputEvent
 {
+	NOTHING,
 	CLOSE_GAME,
-	BUTTON_W,
-	BUTTON_S
+	BUTTON_DOWN_W,
+	BUTTON_DOWN_S,
+	BUTTON_UP_W,
+	BUTTON_UP_S
 };
 
 #endif

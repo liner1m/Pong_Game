@@ -5,10 +5,10 @@
 #include "EventRecipient.h"
 #include "EnumRecipientUserInputEvent.h"
 
-class RecipientUserInputEvent : public EventRecipient
+class RecipientUserInputEvent
 {
 private:
-	void notify(int eventEnum) override;
+	void notify(int eventEnum);
 
 public:
 	virtual void notifyUserInputEvent(int eventEnum) = 0;

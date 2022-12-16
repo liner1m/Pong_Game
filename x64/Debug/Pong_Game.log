@@ -1,22 +1,2 @@
-﻿  Ball.cpp
-  DynamicObject.cpp
-  EventSender.cpp
-  Game.cpp
-  GraphicRender.cpp
-F:\1_Project\Test_Exercises\TE_DiJust_Pong_Game\GraphicRender.cpp(62,43): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-F:\1_Project\Test_Exercises\TE_DiJust_Pong_Game\GraphicRender.cpp(63,43): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  Map.cpp
-  Object.cpp
-  Pawn.cpp
-  PlayerController.cpp
-  PlayerRacket.cpp
-  Pong_Game.cpp
-  RecipientUserInputEvent.cpp
-  RecipientGameTickEvent.cpp
-  SenderUserInputEvent.cpp
-  SenderGameTickEvent.cpp
-  StaticObject.cpp
-  UserInput.cpp
-  Vector2D.cpp
-  Generating Code...
+﻿  Game.cpp
   Pong_Game.vcxproj -> F:\1_Project\Test_Exercises\TE_DiJust_Pong_Game\x64\Debug\Pong_Game.exe

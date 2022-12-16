@@ -14,7 +14,9 @@ private:
 	void moveY(int direction) override;
 
 public:
-	void setControllerSpeed(double speed);
+	Pawn();
+
+	void setControllerSpeed(double controllerSpeed);
 };
 
 #endif

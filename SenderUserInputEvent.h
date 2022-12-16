@@ -4,11 +4,17 @@
 
 #include "EventSender.h"
 #include "EnumRecipientUserInputEvent.h"
+#include "RecipientUserInputEvent.h"
 
-class SenderUserInputEvent : public EventSender
+class SenderUserInputEvent
 {
+private:
+	vector<RecipientUserInputEvent*> vecRecipients;
+
 public:
 	void sendUserInputEvent(int eventEnum);
+	void addUserInputRecipient(RecipientUserInputEvent& recipient);
+	void removeUserInputRecipient(RecipientUserInputEvent& recipient);
 };
 
 #endif

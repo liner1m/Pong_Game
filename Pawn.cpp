@@ -2,15 +2,20 @@
 
 void Pawn::moveX(int direction)
 {
-	this->speed.x = this->speed.x + direction;
+	this->speed.x = controllerSpeed * direction;
 }
 
 void Pawn::moveY(int direction)
 {
-	this->speed.y = this->speed.y + direction;
+	this->speed.y = controllerSpeed * direction;
 }
 
-void Pawn::setControllerSpeed(double speed)
+Pawn::Pawn()
 {
-	this->controllerSpeed = speed;
+	controllerSpeed = 0;
+}
+
+void Pawn::setControllerSpeed(double controllerSpeed)
+{
+	this->controllerSpeed = controllerSpeed;
 }
