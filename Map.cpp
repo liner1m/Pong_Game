@@ -14,18 +14,14 @@ void Map::eventTick()
 // Checking the collision of each object with each once
 void Map::bypassingEachEach()
 {
-	/*auto vecObjectsSize = vecObjects.size();
-	for (int i = 0; i < vecObjectsSize / 2; ++i)
+	for (decltype(vecObjects.size()) i = 0; i < vecObjects.size() - 1; ++i)
 	{
-		checkCollision(*vecObjects[i], *vecObjects[(vecObjectsSize - 1) - i]);
-	}*/
-	/*if (vecObjectsSize % 2 != 0)
-	{
-		for (int i = 0; i < vecObjectsSize; ++i)
+		for (decltype(vecObjects.size()) j = i + 1; j < vecObjects.size(); ++j)
 		{
-			checkCollision(*vecObjects[i], *vecObjects[(vecObjectsSize / 2 + 1)]);
+			checkCollision(*vecObjects[i], *vecObjects[j]);
 		}
-	}*/
+	}
+
 
 	//checkCollision(*vecObjects[0], *vecObjects[2]);
 }
@@ -43,7 +39,8 @@ void Map::checkCollision(Object& object1, Object& object2)
 	bool collisionX = object1.getGlobalBorders().right >= object2.getGlobalBorders().left
 		&& object1.getGlobalBorders().left <= object2.getGlobalBorders().right;
 
-	bool collisionY = true;
+	bool collisionY = object1.getGlobalBorders().up >= object2.getGlobalBorders().down
+		&& object1.getGlobalBorders().down <= object2.getGlobalBorders().up;
 
 	if (collisionX && collisionY)
 	{

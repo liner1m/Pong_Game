@@ -7,5 +7,5 @@ void FreeObject::collision(Object& object)
 
 void FreeObject::rebound()
 {
-
+	setSpeed(Vector2D{ -speed.x,-speed.y });
 }
