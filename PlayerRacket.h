@@ -6,7 +6,8 @@
 
 class PlayerRacket : public Pawn
 {
-
+private:
+	void collision(Object& object) override;
 };
 
 #endif

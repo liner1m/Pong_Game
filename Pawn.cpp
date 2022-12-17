@@ -1,5 +1,10 @@
 #include "Pawn.h"
 
+void Pawn::collision(Object& object)
+{
+
+}
+
 void Pawn::moveX(int direction)
 {
 	this->speed.x = controllerSpeed * direction;

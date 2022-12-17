@@ -10,11 +10,6 @@ void DynamicObject::moveBySpeed()
 	location = location + speed;
 }
 
-void DynamicObject::collision(Object& object)
-{
-
-}
-
 void DynamicObject::setLocation(Vector2D location)
 {
 	this->location = location;

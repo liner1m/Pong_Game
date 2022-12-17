@@ -2,9 +2,9 @@
 #ifndef _BALL_H_
 #define _BALL_H_
 
-#include "DynamicObject.h"
+#include "FreeObject.h"
 
-class Ball : public DynamicObject
+class Ball : public FreeObject
 {
 private:
 

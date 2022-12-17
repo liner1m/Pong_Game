@@ -1,4 +1,5 @@
 #include "Object.h"
+#include <cmath>
 
 void Object::notifyGameTickEvent(int eventEnum)
 {
@@ -38,5 +39,13 @@ Borders Object::getGlobalBorders()
 	temp.up = location.y + localBorders.up;
 	temp.down = location.y + localBorders.down;
 
+	return temp;
+}
+
+Vector2D Object::getSize()
+{
+	Vector2D temp;
+	temp.x = abs(localBorders.left - localBorders.right);
+	temp.y = abs(localBorders.down - localBorders.up);
 	return temp;
 }

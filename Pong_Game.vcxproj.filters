@@ -132,6 +132,9 @@
     <ClCompile Include="Pawn.cpp">
       <Filter>Engine\Source</Filter>
     </ClCompile>
+    <ClCompile Include="FreeObject.cpp">
+      <Filter>Engine\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object.h">
@@ -192,6 +195,9 @@
       <Filter>Engine\Includes\Controllers</Filter>
     </ClInclude>
     <ClInclude Include="Pawn.h">
+      <Filter>Engine\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeObject.h">
       <Filter>Engine\Includes</Filter>
     </ClInclude>
   </ItemGroup>

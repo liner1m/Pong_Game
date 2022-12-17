@@ -44,6 +44,8 @@ public:
 	Vector2D getLocation();
 	Borders getLocalBorders();
 	Borders getGlobalBorders();
+
+	Vector2D getSize();
 };
 
 #endif

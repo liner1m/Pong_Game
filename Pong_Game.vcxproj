@@ -147,6 +147,7 @@
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="DynamicObject.cpp" />
     <ClCompile Include="EventSender.cpp" />
+    <ClCompile Include="FreeObject.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GraphicRender.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="DynamicObject.h" />
     <ClInclude Include="EventRecipient.h" />
     <ClInclude Include="EventSender.h" />
+    <ClInclude Include="FreeObject.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GraphicRender.h" />
     <ClInclude Include="EnumRecipientUserInputEvent.h" />

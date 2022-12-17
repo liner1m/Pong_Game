@@ -17,8 +17,6 @@ private:
 public:
 	~DynamicObject() override {};
 
-	void collision(Object& object) override;
-
 	void setLocation(Vector2D location);
 	void setLocalBorders(Borders localBorders);
 	void setSpeed(Vector2D speed);

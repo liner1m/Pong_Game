@@ -13,7 +13,7 @@ void Map::eventTick()
 void Map::checkCollision()
 {
 	/////////////////////
-	///////////////////
+	//vecObjects[0]->collision(*vecObjects[1]);
 	//////////////////////
 }
 

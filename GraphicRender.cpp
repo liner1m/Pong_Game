@@ -60,9 +60,9 @@ void GraphicRender::drawObjects(const vector<Object*>* vecObjects)
 		{
 			SDL_Rect tempRect;
 			tempRect.x = object->getGlobalBorders().left;
-			tempRect.y = object->getGlobalBorders().up;
-			tempRect.w = 100; //// test
-			tempRect.h = 200; //// test
+			tempRect.y = SCREEN_HEIGHT - object->getGlobalBorders().up; // Invert Y axis
+			tempRect.w = object->getSize().x;
+			tempRect.h = object->getSize().y;
 
 			SDL_RenderFillRect(renderer, &tempRect);
 		});

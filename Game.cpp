@@ -1,6 +1,7 @@
 
 #include "Game.h"
-#include "Pawn.h"
+#include "PlayerRacket.h"
+#include "Ball.h"
 
 void Game::gameInit()
 {
@@ -13,23 +14,30 @@ void Game::gameInit()
 	addRecipient(map);
 
 	// Add objects
-	Pawn test;
-	test.setLocation(Vector2D{ 100, 300 });
-	test.setLocalBorders(Borders{ 100,100,100,100 });
+	PlayerRacket playerRacket;
+	playerRacket.setLocation(Vector2D{ 50, 500 });
+	playerRacket.setLocalBorders(Borders{ 50, 0, 100,-100 });
 	//test.setSpeed(Vector2D{ 1,0 });
-	addRecipient(test);
-	test.setControllerSpeed(10);
-	userInput.addUserInputRecipient(test);
-	map.addObject(test);
+	addRecipient(playerRacket);
+	playerRacket.setControllerSpeed(10);
+	userInput.addUserInputRecipient(playerRacket);
+	map.addObject(playerRacket);
 
-	Pawn test2;
-	test2.setLocation(Vector2D{ 100, 300 });
-	test2.setLocalBorders(Borders{ 100,100,100,100 });
-	addRecipient(test2);
-	userInput.addUserInputRecipient(test2);
-	map.addObject(test2);
+	PlayerRacket playerRacket2;
+	playerRacket2.setLocation(Vector2D{ 950, 500 });
+	playerRacket2.setLocalBorders(Borders{ 0,-50, 100, -100 });
+	//test.setSpeed(Vector2D{ 1,0 });
+	addRecipient(playerRacket2);
+	playerRacket2.setControllerSpeed(10);
+	userInput.addUserInputRecipient(playerRacket2);
+	map.addObject(playerRacket2);
 
-
+	Ball ball;
+	ball.setLocation(Vector2D{ 500, 300 });
+	ball.setLocalBorders(Borders{ 100,-100,100,-100 });
+	ball.setSpeed(Vector2D{ -1, 0 });
+	addRecipient(ball);
+	map.addObject(ball);
 
 	//
 	gameLoop();
@@ -47,7 +55,6 @@ void Game::gameLoop()
 		sleep_for(delay);
 	}
 }
-
 
 Game::Game() : TICKS_PER_SECOND{ 60 }
 {
