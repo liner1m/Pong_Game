@@ -5,6 +5,14 @@
 #include "Vector2D.h"
 #include "RecipientGameTickEvent.h"
 
+enum CollisionSide
+{
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN
+};
+
 struct Borders
 {
 	double right;
@@ -39,7 +47,7 @@ public:
 	Object(Vector2D location, Borders localBorders);
 	virtual ~Object();
 
-	virtual void collision(Object& object) = 0;
+	virtual void collision(Object& object, CollisionSide side) = 0;
 
 	Vector2D getLocation();
 	Borders getLocalBorders();

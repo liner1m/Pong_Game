@@ -7,7 +7,7 @@
 class PlayerRacket : public Pawn
 {
 private:
-	void collision(Object& object) override;
+	void collision(Object& object, CollisionSide side) override;
 };
 
 #endif

@@ -1,4 +1,7 @@
+
 #include "Map.h"
+
+#include <cmath>
 
 void Map::notifyGameTickEvent(int eventEnum)
 {
@@ -36,7 +39,7 @@ void Map::checkCollision(Object& object1, Object& object2)
 	double d = object2.getGlobalBorders().right;
 	//
 
-	bool collisionX = object1.getGlobalBorders().right >= object2.getGlobalBorders().left
+	bool collisionX = object1.getGlobalBorders().right >= object2.getGlobalBorders().left 
 		&& object1.getGlobalBorders().left <= object2.getGlobalBorders().right;
 
 	bool collisionY = object1.getGlobalBorders().up >= object2.getGlobalBorders().down
@@ -44,8 +47,43 @@ void Map::checkCollision(Object& object1, Object& object2)
 
 	if (collisionX && collisionY)
 	{
-		object1.collision(object2);
-		object2.collision(object1);
+		
+
+
+		/*if (object1.getGlobalBorders().right < object2.getGlobalBorders().left
+			&& object1.getGlobalBorders().left > object2.getGlobalBorders().left)
+		{
+			object1.collision(object2, RIGHT);
+			object2.collision(object1, LEFT);
+		}*/
+		/*if ()
+		{
+			object1.collision(object2, LEFT);
+			object2.collision(object1, RIGHT);
+		}*/
+		/*Vector2D displacementVector = object2.getLocation() - object1.getLocation();
+
+		if (object1.getGlobalBorders().right >= object2.getGlobalBorders().left && object1.getGlobalBorders().right <= object2.getGlobalBorders().right)
+		{
+			object1.collision(object2, RIGHT);
+			object2.collision(object1, LEFT);
+		}
+		if (object2.getGlobalBorders().right >= object1.getGlobalBorders().left && object2.getGlobalBorders().right <= object1.getGlobalBorders().right)
+		{
+			object1.collision(object2, LEFT);
+			object2.collision(object1, RIGHT);
+		}
+
+		if (object1.getGlobalBorders().up >= object2.getGlobalBorders().down && object1.getGlobalBorders().up <= object2.getGlobalBorders().up)
+		{
+			object1.collision(object2, DOWN);
+			object2.collision(object1, UP);
+		}
+		if (object2.getGlobalBorders().up >= object1.getGlobalBorders().down && object2.getGlobalBorders().up <= object1.getGlobalBorders().up)
+		{
+			object1.collision(object2, UP);
+			object2.collision(object1, DOWN);
+		}*/
 	}
 }
 

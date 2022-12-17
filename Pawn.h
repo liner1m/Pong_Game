@@ -10,7 +10,7 @@ class Pawn : public DynamicObject, public PlayerController
 private:
 	double controllerSpeed;
 
-	void collision(Object& object) override;
+	void collision(Object& object, CollisionSide side) override;
 
 	void moveX(int direction) override;
 	void moveY(int direction) override;

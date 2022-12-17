@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "Pawn.h"
 #include "FreeObject.h"
+#include "StaticObject.h"
 
 void Game::gameInit()
 {
@@ -14,6 +15,9 @@ void Game::gameInit()
 	addRecipient(map);
 
 	// Add objects
+	//////////////////////////////////////////////////////////////////////////
+
+	// Rackets
 	Pawn playerRacket;
 	playerRacket.setLocation(Vector2D{ 50, 500 });
 	playerRacket.setLocalBorders(Borders{ 50, 0, 100,-100 });
@@ -32,20 +36,26 @@ void Game::gameInit()
 	userInput.addUserInputRecipient(playerRacket2);
 	map.addObject(playerRacket2);
 
+
+	// Ball
 	FreeObject ball;
-	ball.setLocation(Vector2D{ 500, 300 });
+	ball.setLocation(Vector2D{ 500, 400 });
 	ball.setLocalBorders(Borders{ 100,-100,100,-100 });
-	ball.setSpeed(Vector2D{ 3, 0 });
+	ball.setSpeed(Vector2D{ 7, 0 });
 	addRecipient(ball);
 	map.addObject(ball);
 
 
-	FreeObject test;
-	test.setLocation(Vector2D{ 700, 1000 });
-	test.setLocalBorders(Borders{ 50, 0, 50,-50 });
-	//test.setSpeed(Vector2D{ 1,0 });
-	addRecipient(test);
-	map.addObject(test);
+	// Borders
+	StaticObject upBorder{ Vector2D{ 0, 1000 }, Borders{ 1000, 0, 0, -100 } };
+	addRecipient(upBorder);
+	map.addObject(upBorder);
+
+	StaticObject downBorder{ Vector2D{ 0, 0 }, Borders{ 1000, 0, 100, 0 } };
+	addRecipient(downBorder);
+	map.addObject(downBorder);
+
+	//////////////////////////////////////////////////////////////////////////
 
 	//
 	gameLoop();

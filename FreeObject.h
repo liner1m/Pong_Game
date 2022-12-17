@@ -6,9 +6,9 @@
 class FreeObject : public DynamicObject
 {
 private:
-	void collision(Object& object) override;
+	void collision(Object& object, CollisionSide side) override;
 
-	void rebound();
+	void rebound(Object& object, CollisionSide side);
 };
 
 #endif

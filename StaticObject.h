@@ -7,14 +7,13 @@
 class StaticObject : public Object
 {
 private:
-	Vector2D speed;
-
 	void eventTick() override;
 
 public:
+	StaticObject(Vector2D location, Borders localBorders);
 	~StaticObject() override {};
 
-	void collision(Object& object) override;
+	void collision(Object& object, CollisionSide side) override;
 };
 
 #endif

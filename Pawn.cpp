@@ -1,6 +1,6 @@
 #include "Pawn.h"
 
-void Pawn::collision(Object& object)
+void Pawn::collision(Object& object, CollisionSide side)
 {
 
 }

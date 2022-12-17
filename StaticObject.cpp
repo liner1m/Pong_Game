@@ -5,7 +5,12 @@ void StaticObject::eventTick()
 
 }
 
-void StaticObject::collision(Object& object)
+StaticObject::StaticObject(Vector2D location, Borders localBorders) : Object(location, localBorders)
+{
+
+}
+
+void StaticObject::collision(Object& object, CollisionSide side)
 {
 
 }
