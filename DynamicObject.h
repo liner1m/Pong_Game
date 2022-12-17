@@ -11,6 +11,7 @@ protected:
 
 private:
 	void eventTick() override;
+	void collision(Object& object) override;
 
 	void moveBySpeed();
 

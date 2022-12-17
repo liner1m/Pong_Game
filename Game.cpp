@@ -1,7 +1,7 @@
 
 #include "Game.h"
-#include "PlayerRacket.h"
-#include "Ball.h"
+#include "Pawn.h"
+#include "FreeObject.h"
 
 void Game::gameInit()
 {
@@ -14,7 +14,7 @@ void Game::gameInit()
 	addRecipient(map);
 
 	// Add objects
-	PlayerRacket playerRacket;
+	Pawn playerRacket;
 	playerRacket.setLocation(Vector2D{ 50, 500 });
 	playerRacket.setLocalBorders(Borders{ 50, 0, 100,-100 });
 	//test.setSpeed(Vector2D{ 1,0 });
@@ -23,7 +23,7 @@ void Game::gameInit()
 	userInput.addUserInputRecipient(playerRacket);
 	map.addObject(playerRacket);
 
-	PlayerRacket playerRacket2;
+	Pawn playerRacket2;
 	playerRacket2.setLocation(Vector2D{ 950, 500 });
 	playerRacket2.setLocalBorders(Borders{ 0,-50, 100, -100 });
 	//test.setSpeed(Vector2D{ 1,0 });
@@ -32,12 +32,20 @@ void Game::gameInit()
 	userInput.addUserInputRecipient(playerRacket2);
 	map.addObject(playerRacket2);
 
-	Ball ball;
+	FreeObject ball;
 	ball.setLocation(Vector2D{ 500, 300 });
 	ball.setLocalBorders(Borders{ 100,-100,100,-100 });
-	ball.setSpeed(Vector2D{ -5, 0 });
+	ball.setSpeed(Vector2D{ -2, 0 });
 	addRecipient(ball);
 	map.addObject(ball);
+
+
+	FreeObject test;
+	test.setLocation(Vector2D{ 700, 1000 });
+	test.setLocalBorders(Borders{ 50, 0, 50,-50 });
+	//test.setSpeed(Vector2D{ 1,0 });
+	addRecipient(test);
+	map.addObject(test);
 
 	//
 	gameLoop();

@@ -18,7 +18,8 @@ private:
 
 	void eventTick();
 
-	void checkCollision();
+	void bypassingEachEach();
+	void checkCollision(Object& object1, Object& object2);
 
 public:
 	void addObject(Object& object);

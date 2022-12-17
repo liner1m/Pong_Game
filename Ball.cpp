@@ -1,6 +1,6 @@
 #include "Ball.h"
 
-void Ball::collision(Object& object)
-{
-
-}
+//void Ball::collision(Object& object)
+//{
+//
+//}

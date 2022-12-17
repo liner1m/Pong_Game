@@ -7,58 +7,49 @@ void Map::notifyGameTickEvent(int eventEnum)
 
 void Map::eventTick()
 {
-	checkCollision();
+	// Checking the collision of each object with each once
+	bypassingEachEach();
 }
 
-void Map::checkCollision()
+// Checking the collision of each object with each once
+void Map::bypassingEachEach()
 {
-	/////////////////////
-	// 
-	// Checking the collision of each object with each once
 	/*auto vecObjectsSize = vecObjects.size();
-	if (vecObjectsSize % 2 == 0)
+	for (int i = 0; i < vecObjectsSize / 2; ++i)
 	{
-		for (int i = 0; i < vecObjectsSize / 2; ++i)
-		{
-			auto itFirstObj = vecObjects.begin()
-
-			if ((vecObjects[i]->getGlobalBorders().left <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().left
-				&& vecObjects[i]->getGlobalBorders().right <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().left)
-				|| (vecObjects[i]->getGlobalBorders().left <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().right
-				&& vecObjects[i]->getGlobalBorders().right <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().right))
-			{
-				vecObjects[i]->collision(*vecObjects[(vecObjectsSize - 1) - i]);
-				vecObjects[(vecObjectsSize - 1) - i]->collision(*vecObjects[i]);
-			}
-		}
-	}
-	else
+		checkCollision(*vecObjects[i], *vecObjects[(vecObjectsSize - 1) - i]);
+	}*/
+	/*if (vecObjectsSize % 2 != 0)
 	{
-		for (int i = 0; i < vecObjectsSize / 2; ++i)
-		{
-			if ((vecObjects[i]->getGlobalBorders().left <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().left
-				&& vecObjects[i]->getGlobalBorders().right <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().left)
-				|| (vecObjects[i]->getGlobalBorders().left <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().right
-					&& vecObjects[i]->getGlobalBorders().right <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().right))
-			{
-				vecObjects[i]->collision(*vecObjects[(vecObjectsSize - 1) - i]);
-				vecObjects[(vecObjectsSize - 1) - i]->collision(*vecObjects[i]);
-			}
-		}
 		for (int i = 0; i < vecObjectsSize; ++i)
 		{
-			if ((vecObjects[i]->getGlobalBorders().left <= vecObjects[(vecObjectsSize / 2 + 1)]->getGlobalBorders().left
-				&& vecObjects[i]->getGlobalBorders().right <= vecObjects[(vecObjectsSize / 2 + 1)]->getGlobalBorders().left)
-				|| (vecObjects[i]->getGlobalBorders().left <= vecObjects[(vecObjectsSize / 2 + 1)]->getGlobalBorders().right
-					&& vecObjects[i]->getGlobalBorders().right <= vecObjects[(vecObjectsSize / 2 + 1)]->getGlobalBorders().right))
-			{
-				vecObjects[i]->collision(*vecObjects[(vecObjectsSize / 2 + 1)]);
-				vecObjects[(vecObjectsSize / 2 + 1)]->collision(*vecObjects[i]);
-			}
+			checkCollision(*vecObjects[i], *vecObjects[(vecObjectsSize / 2 + 1)]);
 		}
 	}*/
-	
-	//////////////////////
+
+	//checkCollision(*vecObjects[0], *vecObjects[2]);
+}
+
+// AABB-AABB collision type
+void Map::checkCollision(Object& object1, Object& object2)
+{
+	//test
+	double a = object1.getGlobalBorders().right;
+	double b = object2.getGlobalBorders().left;
+	double c = object1.getGlobalBorders().left;
+	double d = object2.getGlobalBorders().right;
+	//
+
+	bool collisionX = object1.getGlobalBorders().right >= object2.getGlobalBorders().left
+		&& object1.getGlobalBorders().left <= object2.getGlobalBorders().right;
+
+	bool collisionY = true;
+
+	if (collisionX && collisionY)
+	{
+		object1.collision(object2);
+		object2.collision(object1);
+	}
 }
 
 void Map::addObject(Object& object)

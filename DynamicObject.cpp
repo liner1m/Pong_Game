@@ -5,6 +5,11 @@ void DynamicObject::eventTick()
 	moveBySpeed();
 }
 
+void DynamicObject::collision(Object& object)
+{
+
+}
+
 void DynamicObject::moveBySpeed()
 {
 	location = location + speed;

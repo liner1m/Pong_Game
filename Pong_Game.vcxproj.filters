@@ -129,11 +129,11 @@
     <ClCompile Include="PlayerController.cpp">
       <Filter>Engine\Source\Controllers</Filter>
     </ClCompile>
-    <ClCompile Include="Pawn.cpp">
-      <Filter>Engine\Source</Filter>
-    </ClCompile>
     <ClCompile Include="FreeObject.cpp">
-      <Filter>Engine\Source</Filter>
+      <Filter>Engine\Source\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Pawn.cpp">
+      <Filter>Engine\Source\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -194,11 +194,11 @@
     <ClInclude Include="PlayerController.h">
       <Filter>Engine\Includes\Controllers</Filter>
     </ClInclude>
-    <ClInclude Include="Pawn.h">
-      <Filter>Engine\Includes</Filter>
-    </ClInclude>
     <ClInclude Include="FreeObject.h">
-      <Filter>Engine\Includes</Filter>
+      <Filter>Engine\Includes\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Pawn.h">
+      <Filter>Engine\Includes\Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
