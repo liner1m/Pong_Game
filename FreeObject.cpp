@@ -13,13 +13,13 @@ void FreeObject::rebound(Object& object, CollisionSide side)
 		setSpeed(Vector2D{ -speed.x, speed.y });
 		break;
 	case RIGHT:
-		setSpeed(Vector2D{ speed.x, -speed.y });
+		setSpeed(Vector2D{ -speed.x, -speed.y });
 		break;
 	case UP:
-		setSpeed(Vector2D{ -speed.x, -speed.y });
+		setSpeed(Vector2D{ speed.x, -speed.y });
 		break;
 	case DOWN:
-		setSpeed(Vector2D{ -speed.x, -speed.y });
+		setSpeed(Vector2D{ speed.x, -speed.y });
 		break;
 	default:
 		break;

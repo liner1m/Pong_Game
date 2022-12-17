@@ -47,20 +47,36 @@ void Map::checkCollision(Object& object1, Object& object2)
 
 	if (collisionX && collisionY)
 	{
-		
+		double deepX1 = object1.getLocalBorders().left - object2.getLocalBorders().right;
+		double deepX2 = object2.getLocalBorders().left - object1.getLocalBorders().right;
 
+		double deepY1 = object1.getLocalBorders().down - object2.getLocalBorders().up;
+		double deepY2 = object2.getLocalBorders().down - object1.getLocalBorders().up;
 
-		/*if (object1.getGlobalBorders().right < object2.getGlobalBorders().left
-			&& object1.getGlobalBorders().left > object2.getGlobalBorders().left)
+		if (deepX1 >= deepX2 && deepX1 >= deepY2)
 		{
 			object1.collision(object2, RIGHT);
 			object2.collision(object1, LEFT);
-		}*/
-		/*if ()
+		}
+		if (deepX1 <= deepX2 && deepX1 >= deepY1)
 		{
 			object1.collision(object2, LEFT);
 			object2.collision(object1, RIGHT);
-		}*/
+		}
+
+		if (deepY1 >= deepY2 && deepY1 >= deepX2)
+		{
+			object1.collision(object2, DOWN);
+			object2.collision(object1, UP);
+		}
+		if (deepY1 <= deepY2 && deepY1 >= deepX1)
+		{
+			object1.collision(object2, UP);
+			object2.collision(object1, DOWN);
+		}
+
+
+
 		/*Vector2D displacementVector = object2.getLocation() - object1.getLocation();
 
 		if (object1.getGlobalBorders().right >= object2.getGlobalBorders().left && object1.getGlobalBorders().right <= object2.getGlobalBorders().right)
