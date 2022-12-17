@@ -35,7 +35,7 @@ void Game::gameInit()
 	Ball ball;
 	ball.setLocation(Vector2D{ 500, 300 });
 	ball.setLocalBorders(Borders{ 100,-100,100,-100 });
-	ball.setSpeed(Vector2D{ -1, 0 });
+	ball.setSpeed(Vector2D{ -5, 0 });
 	addRecipient(ball);
 	map.addObject(ball);
 

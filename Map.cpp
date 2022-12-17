@@ -13,7 +13,51 @@ void Map::eventTick()
 void Map::checkCollision()
 {
 	/////////////////////
-	//vecObjects[0]->collision(*vecObjects[1]);
+	// 
+	// Checking the collision of each object with each once
+	/*auto vecObjectsSize = vecObjects.size();
+	if (vecObjectsSize % 2 == 0)
+	{
+		for (int i = 0; i < vecObjectsSize / 2; ++i)
+		{
+			auto itFirstObj = vecObjects.begin()
+
+			if ((vecObjects[i]->getGlobalBorders().left <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().left
+				&& vecObjects[i]->getGlobalBorders().right <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().left)
+				|| (vecObjects[i]->getGlobalBorders().left <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().right
+				&& vecObjects[i]->getGlobalBorders().right <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().right))
+			{
+				vecObjects[i]->collision(*vecObjects[(vecObjectsSize - 1) - i]);
+				vecObjects[(vecObjectsSize - 1) - i]->collision(*vecObjects[i]);
+			}
+		}
+	}
+	else
+	{
+		for (int i = 0; i < vecObjectsSize / 2; ++i)
+		{
+			if ((vecObjects[i]->getGlobalBorders().left <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().left
+				&& vecObjects[i]->getGlobalBorders().right <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().left)
+				|| (vecObjects[i]->getGlobalBorders().left <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().right
+					&& vecObjects[i]->getGlobalBorders().right <= vecObjects[(vecObjectsSize - 1) - i]->getGlobalBorders().right))
+			{
+				vecObjects[i]->collision(*vecObjects[(vecObjectsSize - 1) - i]);
+				vecObjects[(vecObjectsSize - 1) - i]->collision(*vecObjects[i]);
+			}
+		}
+		for (int i = 0; i < vecObjectsSize; ++i)
+		{
+			if ((vecObjects[i]->getGlobalBorders().left <= vecObjects[(vecObjectsSize / 2 + 1)]->getGlobalBorders().left
+				&& vecObjects[i]->getGlobalBorders().right <= vecObjects[(vecObjectsSize / 2 + 1)]->getGlobalBorders().left)
+				|| (vecObjects[i]->getGlobalBorders().left <= vecObjects[(vecObjectsSize / 2 + 1)]->getGlobalBorders().right
+					&& vecObjects[i]->getGlobalBorders().right <= vecObjects[(vecObjectsSize / 2 + 1)]->getGlobalBorders().right))
+			{
+				vecObjects[i]->collision(*vecObjects[(vecObjectsSize / 2 + 1)]);
+				vecObjects[(vecObjectsSize / 2 + 1)]->collision(*vecObjects[i]);
+			}
+		}
+	}*/
+	
 	//////////////////////
 }
 
